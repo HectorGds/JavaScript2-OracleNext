@@ -1,0 +1,60 @@
+<meta charset= "UTF-8">
+
+<h1> Promedio de IMC </h1>
+
+<script>
+    //Calculo correcto//
+    
+    function saltarlinea () {
+
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+}
+
+    function imprimir(frase) {
+
+        document.write(frase);
+        saltarlinea();
+    }
+
+    function calcularImc(peso,altura) {
+        imc = peso / (altura * altura);
+        return imc;
+
+    }
+
+    var nombre = prompt("Informe su nombre");
+    var pesoInformado = prompt(nombre + " Informe su peso");
+    var alturaInformado = prompt(nombre +"Informe su altura");
+
+    IMCcalculado = calcularImc(pesoInformado,alturaInformado);
+
+    imprimir(nombre + " su IMC es de: " + IMCcalculado );
+    
+    if (IMCcalculado < 18.5) { 
+
+    imprimir( nombre + " su IMC esta abajo de lo recomendado");
+    
+    }
+
+    if ( IMCcalculado >= 18.5) {
+
+        if (IMCcalculado < 25 )
+
+        imprimir(nombre + " su IMC esta dentro del Intervalo normal ");
+    }
+
+    if ( IMCcalculado >= 25) {
+
+        if (IMCcalculado <30)
+
+        imprimir( nombre + " su IMC considerado esta como sobrepeso");
+        
+    }
+    if ( IMCcalculado >= 30) {
+
+        imprimir( nombre + " su IMC considerado esta como obesidad");
+    }
+
+</script>
